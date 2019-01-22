@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://D:/Documents/GitHub/pkts" charset="UTF-8" />
+    <file url="file://D:/Documents/GitHub/pkts/pkts-buffers" charset="UTF-8" />
+    <file url="file://D:/Documents/GitHub/pkts/pkts-core" charset="UTF-8" />
+    <file url="file://D:/Documents/GitHub/pkts/pkts-examples" charset="UTF-8" />
+    <file url="file://D:/Documents/GitHub/pkts/pkts-sdp" charset="UTF-8" />
+    <file url="file://D:/Documents/GitHub/pkts/pkts-sip" charset="UTF-8" />
+    <file url="file://D:/Documents/GitHub/pkts/pkts-streams" charset="UTF-8" />
+    <file url="file://D:/Documents/GitHub/pkts/pkts-tools" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pkts" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pkts/pkts-buffers" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pkts/pkts-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pkts/pkts-examples" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pkts/pkts-sdp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pkts/pkts-sip" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pkts/pkts-streams" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pkts/pkts-tools" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="PcapOnSpark" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="pkts-buffers" target="1.8" />
+      <module name="pkts-core" target="1.8" />
+      <module name="pkts-examples" target="1.8" />
+      <module name="pkts-parent" target="1.8" />
+      <module name="pkts-sdp" target="1.8" />
+      <module name="pkts-sip" target="1.8" />
+      <module name="pkts-streams" target="1.8" />
+      <module name="pkts-tools" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
