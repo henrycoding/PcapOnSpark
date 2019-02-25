@@ -1,6 +1,4 @@
-import java.io.InputStream
 
-import io.pkts.buffer.BoundedInputStreamBuffer
 
 object ReflectUtils {
   def getPrivateField[Val](ref: AnyRef, name: String): Val =  {

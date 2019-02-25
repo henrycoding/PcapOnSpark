@@ -1,19 +1,9 @@
-import java.nio.ByteOrder
-
 import com.google.polo.pairing.HexDump
-import io.pkts.{PacketHandler, Pcap}
-import io.pkts.buffer.{BoundedInputStreamBuffer, Buffers, ByteBuffer}
 import io.pkts.frame.PcapGlobalHeader
-import org.apache.spark.input.PortableDataStream
-import org.apache.spark.{SparkConf, SparkContext}
-import io.pkts.filters.FilterException
-import io.pkts.framer.PcapFramer
-import io.pkts.packet.{PacketFactory, Packet => PktsPacket}
 import io.pkts.packet.impl.PCapPacketImpl
-import io.pkts.protocol.Protocol
-import org.pcap4j.packet.{Packet, TcpPacket}
-import org.pcap4j.packet.factory.PacketFactories
-import org.pcap4j.packet.namednumber.DataLinkType
+import io.pkts.packet.{Packet => PktsPacket}
+import io.pkts.{PacketHandler, Pcap}
+import org.apache.spark.{SparkConf, SparkContext}
 
 case class PacketItem(payload: Array[Byte], pktLen: Long, arrTime: Long, dataLinkType: Int)
 
@@ -24,7 +14,7 @@ object Main {
     val conf = new SparkConf().setAppName("DataClean")
     val sc = SparkContext.getOrCreate(conf)
 
-    val pcapFiles = sc.binaryFiles("hdfs://192.168.1.117:9000/zhangheng/testcap")
+    val pcapFiles = sc.binaryFiles("hdfs://192.168.1.117:9000/zhangheng/testcap/http.pcap")
     pcapFiles.
       flatMap(t => {
         val arr = new ArrayBuffer[PacketItem]()
@@ -43,13 +33,8 @@ object Main {
       })
       .repartition(1000)
       .map(t => {
-        PacketFactories.getFactory(classOf[Packet], classOf[DataLinkType]).newInstance(t.payload, 0, t.payload.length,
-          DataLinkType.getInstance(t.dataLinkType))
-      })
-      .map(t => {
-
-      })
-      .foreach(println)
+        HexDump.dumpHexString(t.payload)
+      }).collect().foreach(println)
     sc.stop()
   }
 }

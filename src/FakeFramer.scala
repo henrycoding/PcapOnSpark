@@ -1,10 +1,9 @@
 import java.io.IOException
-
-import io.pkts.buffer.Buffer
-import io.pkts.packet.{PCapPacket, Packet}
 import java.nio.ByteOrder
 
+import io.pkts.buffer.Buffer
 import io.pkts.frame.{PcapGlobalHeader, PcapRecordHeader}
+import io.pkts.packet.Packet
 
 import scala.tools.nsc.interpreter.InputStream
 
