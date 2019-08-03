@@ -9,6 +9,7 @@ case class PacketItem(payload: Array[Byte], pktLen: Long, arrTime: Long, dataLin
 
 import scala.collection.mutable.ArrayBuffer
 object Main {
+  def mac2String(pkt: Array[Byte], offset: Int): String = String.format("%02X:%02X:%02X:%02X:%02X:%02X", Byte.box(pkt(offset)), Byte.box(pkt(offset + 1)), Byte.box(pkt(offset + 2)), Byte.box(pkt(offset + 3)), Byte.box(pkt(offset + 4)), Byte.box(pkt(offset + 5)))
 
   def main(args: Array[String]) :Unit = {
     val conf = new SparkConf().setAppName("DataClean")
@@ -33,7 +34,7 @@ object Main {
       })
       .repartition(1000)
       .map(t => {
-        HexDump.dumpHexString(t.payload)
+        (mac2String(t.payload, 0), mac2String(t.payload, 6))
       }).collect().foreach(println)
     sc.stop()
   }
